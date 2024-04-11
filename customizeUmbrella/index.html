@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customize your Umbrella</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="./index.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="umbrella-container">
+      <div class="loader">       
+        <svg fill="#000000" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M202.82861,197.17188a3.99991,3.99991,0,1,1-5.65722,5.65624L128,133.65723,58.82861,202.82812a3.99991,3.99991,0,0,1-5.65722-5.65624L122.343,128,53.17139,58.82812a3.99991,3.99991,0,0,1,5.65722-5.65624L128,122.34277l69.17139-69.17089a3.99991,3.99991,0,0,1,5.65722,5.65624L133.657,128Z">
+            </path>
+          </g>
+        </svg>
+      </div>
+      <img src="assets/Blue umbrella.png" alt="Umbrella" class="umbrella">
+      <div class="logo-container">
+        <img src="" alt="logo" class="logo">
+      </div>
+    </div>
+    <div class="controller">
+      <h1>Custom Umbrella</h1>
+      <ul class="custom-color-selector">
+        <li class="custom-color" data-idx="3" style="--custom-hue:336;--custom-color:hsl(336, 78%, 50%)"></li>
+        <li class="custom-color active" data-idx="4" style="--custom-hue:200;--custom-color:hsl(200, 100%, 45%)"></li>
+        <li class="custom-color" data-idx="5" style="--custom-hue:45;--custom-color:hsl(45, 100%, 61%)"></li>
+      </ul>
+      <h3>Customize your umbrella</h3>
+      <p>Upload a logo for an instant preview</p>
+      <p>.png and .jpg file only. Max file size is 5MB</p>
+      <input type="file" name="logo" id="logo" accept=".jpg,.png,.jpeg" style="visibility:hidden;height:0;width:0;" />
+      <div class="upload">
+        <div class="iconLeft">
+          <img style="--top:1.5px;" src="./assets/upload_icon.svg" alt="loader" class="upload-icon">
+          <img style="--top:3px;" src="./assets/loader_icon.svg" alt="loader" class="spin loader">
+        </div>
+        <span id="button-text">UPLOAD LOGO</span>
+        <div class="iconRight">
+          <img style="--top:3px;" src="./assets/x.svg" alt="loader" class="close">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.spin {
+    animation: spin 2s ease-out infinite;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    --custom-hue: 200;
+    --custom-color: hsl(200, 100%, 45%);
+    background-color: hsl(var(--custom-hue), 86%, 94%);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 10px;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.umbrella-container {
+    grid-column: 2 / 7;
+    grid-row: 3/6;
+    justify-self: center;
+    align-self: center;
+    position: relative;
+    width: max-content;
+    height: max-content;
+}
+
+
+.umbrella-container .umbrella {
+    z-index: 2;
+    height: 400px;
+    justify-self: center;
+    align-self: center;
+}
+
+.controller .custom-color {
+    cursor: pointer;
+}
+
+.controller {
+    grid-column: 7/12;
+    grid-row: 2 / 7;
+    justify-self: center;
+    align-self: center;
+}
+
+.controller h1 {
+    font-size: 3rem;
+}
+
+.controller p {
+    font-size: 1rem;
+    margin: 1rem 0;
+    align-self: baseline;
+}
+
+.controller .custom-color-selector {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    margin: 1.5rem 0;
+}
+
+.controller .custom-color {
+    height: 20px;
+    width: 20px;
+    background-color: var(--custom-color);
+    border-radius: 100%;
+}
+
+.controller .upload {
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    background-color: var(--custom-color);
+    text-align: center;
+    color: white;
+    border: none;
+}
+
+.controller .upload img {
+    position: relative;
+    top: var(--top);
+    color: white;
+    vertical-align: middle;
+    height: max-content;
+    display: inline;
+    position: absolute;
+    padding: 0;
+    height: 30px;
+    width: 30px;
+}
+
+.controller .upload img {
+    cursor: pointer;
+}
+
+.controller .iconLeft img {
+    left: 10px;
+}
+
+.controller .iconRight img {
+    right: 10px;
+}
+
+.controller .upload {
+    text-transform: uppercase;
+}
+
+.controller .upload .upload {
+    display: inline;
+}
+
+.controller .upload .loader {
+    display: none;
+}
+
+.controller .upload.loading .upload-icon {
+    display: none;
+}
+
+.controller .upload.loading .loader {
+    display: inline;
+}
+
+
+.controller .upload .close {
+    display: none;
+}
+
+.controller .upload.has-logo .close {
+    display: block;
+}
+
+.controller .custom-color.active {
+    box-shadow: inset 0 0 0px 3px hsl(var(--custom-hue), 100%, 79%)
+}
+
+.umbrella-container.logo-loading .loader,
+.umbrella-container.loading .loader {
+    opacity: 1;
+}
+
+.umbrella-container .logo {
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    max-height: 200;
+}
+
+.umbrella-container.has-logo .logo {
+    opacity: 1;
+}
+
+.umbrella-container .loader {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: hsl(var(--custom-hue), 86%, 94%);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    align-items: center;
+}
+
+.logo-container {
+    height: 20px;
+    width: 60px;
+    position: relative;
+    bottom: 60px;
+    margin: 0 auto;
+}
+
+.logo-container .logo {
+    height: 20px;
+    width: 60px;
+}
+
+@media only screen and (max-width: 786px) {
+    .umbrella-container {
+        grid-column: 2 / 12;
+        grid-row: 2/3;
+    }
+
+    .controller {
+        grid-column: 2/12;
+        grid-row: 3 / 7;
+    }
+}
